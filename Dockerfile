@@ -1,5 +1,3 @@
 FROM openjdk:17
-COPY target/expense-tracker.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
-
+COPY target/*.jar ExpenseTracker.jar
+CMD ["java", "-jar", "ExpenseTracker.jar"]
