@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
-COPY target/ExpenseTracker-1.0-SNAPSHOT.jar app.jar
+FROM openjdk:17
+COPY target/expense-tracker.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
