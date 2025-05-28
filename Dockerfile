@@ -1,14 +1,4 @@
-# Use OpenJDK base image
-FROM openjdk:17
+FROM openjdk:8-jdk-alpine
+COPY target/ExpenseTracker-1.0-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
-# Set working directory
-WORKDIR /app
-
-# Copy project files into container
-COPY . .
-
-# Compile the Java Swing program
-RUN javac ExpenseTracker.java
-
-# Run the Java application
-CMD ["java", "ExpenseTracker"]
